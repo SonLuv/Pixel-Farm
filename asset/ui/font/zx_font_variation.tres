@@ -1,0 +1,8 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://d4hkn5bhmlrcj"]
+
+[ext_resource type="FontFile" uid="uid://bsxmulplbh8on" path="res://asset/ui/font/zx_paim.ttf" id="1_qc1fo"]
+
+[resource]
+base_font = ExtResource("1_qc1fo")
+spacing_glyph = -3
+spacing_top = 2

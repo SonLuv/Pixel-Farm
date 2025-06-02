@@ -28,7 +28,7 @@ func _on_tool_corn_pressed() -> void:
 	
 
 func _on_tool_tomato_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.PlanTomato)
+	ToolManager.select_tool(DataTypes.Tools.PlantTomato)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

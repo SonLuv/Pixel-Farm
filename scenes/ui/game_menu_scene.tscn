@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxqoqo633qx5y"]
+
+[ext_resource type="Theme" uid="uid://b4l4rok4mbepm" path="res://scenes/ui/game_ui_theme.tres" id="1_gic8q"]
+[ext_resource type="Script" uid="uid://bkgr16fpo1amg" path="res://scenes/ui/game_menu_scene.gd" id="1_m3myr"]
+[ext_resource type="Texture2D" uid="uid://tum26s0xrlci" path="res://scenes/ui/farm game.png" id="1_xasfw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3myr"]
+atlas = ExtResource("1_xasfw")
+
+[node name="GameMenuScene" type="CanvasLayer"]
+script = ExtResource("1_m3myr")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Node2D"]
+offset_left = -1.0
+offset_top = 1.0
+offset_right = 640.0
+offset_bottom = 358.0
+texture = SubResource("AtlasTexture_m3myr")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.340278
+anchor_right = 0.24375
+anchor_bottom = 0.659722
+offset_top = 33.0
+offset_right = -36.0
+offset_bottom = -33.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_gic8q")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"GameMenuButton"
+text = "START"
+
+[node name="SaveGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"GameMenuButton"
+text = "SAVE"
+
+[node name="ExitGameButton2" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = &"GameMenuButton"
+text = "EXIT
+"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("1_gic8q")
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"Label"
+theme_override_colors/font_color = Color(0.974227, 0.963935, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 54
+text = "2D PIXEL FARM"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton2" to="." method="_on_exit_game_button_2_pressed"]
